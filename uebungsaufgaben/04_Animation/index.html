@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../css/global.css">
+	<title>Übungsaufgabe: Animation</title>
+</head>
+<body class="animation">
+	<div class="navigation">
+		<div class="slice" onclick=' var menu = document.getElementById("menu");
+			if(menu.className == "hidden") {
+				menu.className = "";
+				this.innerHTML = "close";
+			} else {
+				menu.className = "hidden";
+				this.innerHTML = "open";
+			}'>
+			open
+		</div>
+		<div class="hidden" id="menu">
+			<ul>
+				<li><a href="01_Floating_Boxmodell">01 - Floating_Boxmodell</a>
+					<ol>
+						<li><a href="/uebungsaufgaben/01_Floating_Boxmodell/index.html">Layout</a></li>
+						<li><a href="/uebungsaufgaben/01_Floating_Boxmodell/index1.html">Layout</a></li>
+						<li><a href="/uebungsaufgaben/01_Floating_Boxmodell/index2.html">Layout</a></li>
+					</ol>
+				</li>
+				<li><a href="02_Elemente">02 - Elemente</a>
+					<ol>
+						<li><a href="/uebungsaufgaben/02_Elemente/index.html">Layout</a></li>
+						<li><a href="/uebungsaufgaben/02_Elemente/index1.html">Layout</a></li>
+						<li><a href="/uebungsaufgaben/02_Elemente/index2.html">Layout</a></li>
+						<li><a href="/uebungsaufgaben/02_Elemente/index3.html">Layout</a></li>
+					</ol>
+				</li>
+				<li><a href="03_Specials">03 - Specials</a>
+					<ol>
+						<li><a href="/uebungsaufgaben/03_Specials/index.html">Layout</a></li>
+						<li><a href="/uebungsaufgaben/03_Specials/index1.html">Layout</a></li>
+						<li><a href="/uebungsaufgaben/03_Specials/index2.html">Layout</a></li>
+						<li><a href="/uebungsaufgaben/03_Specials/index3.html">Layout</a></li>
+						<li><a href="/uebungsaufgaben/03_Specials/index4.html">Layout</a></li>
+						<li><a href="/uebungsaufgaben/03_Specials/index5.html">Layout</a></li>
+						<li><a href="/uebungsaufgaben/03_Specials/index6.html">Layout</a></li>
+						<li><a href="/uebungsaufgaben/03_Specials/index7.html">Layout</a></li>
+					</ol>
+				</li>
+				<li><a href="04_Animation">04 - Animation</a>
+					<ol>
+						<li><a href="/uebungsaufgaben/04_Animation/index.html">Layout</a></li>
+					</ol>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="city-container">
+		<div class="sky-container">
+			<div class="universe-container">
+				<div class="sun"></div>
+				<div class="moon"></div>
+			</div>
+			<img src="img/flugzeug@2x.png" class="airplane">
+		</div>
+		<img src="img/stadt@2x.png" class="city">
+		<img src="img/wolke01@2x.png" class="big-cloud">
+		<img src="img/wolke02@2x.png" class="cloud01">
+		<img src="img/wolke02@2x.png" class="cloud02">
+		<img src="img/wolke03@2x.png" class="small-cloud01">
+		<img src="img/wolke03@2x.png" class="small-cloud02">
+		<img src="img/wolke04@2x.png" class="tiny-cloud01">
+		<img src="img/wolke04@2x.png" class="tiny-cloud02">
+		<img src="img/haus01@2x.png" class="house01">
+		<img src="img/haus02@2x.png" class="house02">
+		<img src="img/baum@2x.png" class="tree01">
+		<img src="img/baum@2x.png" class="tree02">
+		<img src="img/muelleimer@2x.png" class="trashcan">
+		<img src="img/zug@2x.png" class="train">
+		<img src="img/windrad01@2x.png" class="windmill01">
+		<img src="img/windrad01@2x.png" class="windmill02">
+		<img src="img/windrad02@2x.png" class="big-windmill01">
+		<img src="img/windrad02@2x.png" class="big-windmill02">
+		<div class="city-color"></div>
+		<div class="environment-color"></div>
+	</div>
+
+	<div class="btn">Stop</div>
+	<a href=".." class="back">Go back</a>
+	
+	<!--<div class="time">
+		<div class="night"></div>
+		<div class="day"></div>
+	</div>-->
+
+	<script>
+		
+		var x = 1;
+		timeout = setTimeout(reset, 1500);
+
+		// Start/Stop button
+		$(".btn").on("click", function() {
+			if($(".animation").hasClass("paused")) {
+				// Stop of animation
+				$(".animation").removeClass("paused");
+				$(this).html("Stop");
+			} else {
+				// Start of animation
+				$(".animation").addClass("paused");
+				$(this).html("Start");
+			}
+		});
+
+		// get key input
+		$(document).keydown(function(e) {
+			// on arrow left press
+			if(e.which == 37) {
+				var positionLeft = $(".trashcan").position().left - 10;
+				$(".trashcan").css("left", positionLeft+"px");
+				running();
+			}
+			// on arrow up press
+			if(e.which == 38) {
+				var positionTop = $(".trashcan").position().top;
+			}
+			// on arrow right press
+			if(e.which == 39) {
+				var positionRight = $(".trashcan").position().left + 10;
+				$(".trashcan").css("left", positionRight+"px");
+				running();
+			}
+		});
+
+		function running() {
+			clearTimeout(timeout);
+			switch(x) {
+				case 0:
+					$(".trashcan").css("transform", "rotate(0deg)");
+					x = 1;
+					break;
+				case 1:
+					$(".trashcan").css("transform", "rotate(3deg)");
+					x = 2;
+					break;
+				case 2:
+					$(".trashcan").css("transform", "rotate(0deg)");
+					x = 3;
+					break;
+				case 3:
+					$(".trashcan").css("transform", "rotate(-3deg)");
+					x = 0;
+					break;
+				default:
+					x = 1;
+			}
+			timeout = setTimeout(reset, 1500);
+		}
+
+		function reset() {
+			$(".trashcan").css("transform", "rotate(0deg)");
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+body {
+	font-family: Calibri, 'Trebuchet MS', sans-serif;
+	background-color: rgba(230, 255, 255, 0.5);
+}
+
+header {
+	height: 4rem;
+	width: 32rem;
+	margin: 1rem auto;
+	position: relative;
+}
+
+.headline {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 4rem;
+	line-height: 4rem;
+}
+
+#settings {
+	cursor: pointer;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	background-image: url(../img/gear.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 3rem;
+	height: 3rem;
+}
+
+#settings.changed {
+	background-image: url(../img/gear-changed.png);
+}
+
+#settings:hover {
+	background-color: rgba(30, 30, 100, 0.6);
+	opacity: 0.8;
+	border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.settings-modal {
+	display: none;
+	position: absolute;
+	left: -1.25rem;
+	bottom: 0;
+	transform: translateY(100%);
+	border-radius: 0.3rem;
+	padding: 0.5rem;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+#settings:hover .settings-modal {
+	display: block;
+	background-color: rgba(30, 30, 100, 0.6);
+}
+
+#difficulty, #fieldsize {
+	margin: 0 auto 0.5rem auto;
+	outline: none;
+	display: block;
+	width: 8rem;
+	border: none;
+	padding: 1px;
+}
+
+#play {
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-left: 2rem solid rgb(70, 172, 39);
+	border-top: 1.5rem solid transparent;
+	border-bottom: 1.5rem solid transparent;
+}
+#play:hover {
+	opacity: 0.8;
+}
+
+#bomb-number {
+	height: 2rem;
+	text-align: center;
+}
+
+#bomb-number img {
+	height: 2rem;
+}
+
+#minefield {
+	margin: 1rem auto 4rem auto;
+	background-color: #00000020;
+	box-shadow: 0 0 1rem #00000044;
+	text-align: center;
+}
+
+td {
+	width: 6rem;
+	height: 6rem;
+	background-color: #00008010;
+	cursor: pointer;
+}
+
+td.active {
+	background-color: #00002040;
+	box-shadow: 0 0 1rem #00000020;
+}
+td.active:hover { box-shadow: none; }
+
+td::after {
+	content: "";
+	display: block;
+	width: 6rem;
+}
+
+td::before {
+	content: "";
+	display: block;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 3rem;
+	height: 3rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+td.one::before { background-image: url(../img/1.png); }
+
+td.two::before { background-image: url(../img/2.png); }
+
+td.three::before { background-image: url(../img/3.png); }
+
+td.four::before { background-image: url(../img/4.png); }
+
+td.five::before { background-image: url(../img/5.png); }
+
+td.six::before { background-image: url(../img/6.png); }
+
+td.seven::before { background-image: url(../img/7.png); }
+
+td.eight::before { background-image: url(../img/8.png); }
+
+td.flag::before {
+	background-image: url(../img/flag.png);
+	width: 6rem;
+	height: 6rem;
+}
+
+td.bomb::before {
+	background-image: url(../img/bomb.png);
+	width: 6rem;
+	height: 6rem;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	background-color: #00000020;
+	opacity: 0.2;
+}
+.modal.show {
+	display: block;
+	opacity: 1;
+}
+
+.modal-body {
+	position: absolute;
+	top: 20vh;
+	height: 38vh;
+	width: 100vw;
+	border-style: solid;
+	border-width: 1vh 0 1vh 0;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+#win-modal .modal-body {
+	background: #00ff0088;
+	border-color: #00ff00;
+}
+#lose-modal .modal-body {
+	background: #ff000088;
+	border-color: #ff0000;
+}
+
+.btn-play {
+	cursor: pointer;
+}

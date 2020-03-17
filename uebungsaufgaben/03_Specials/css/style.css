@@ -1,0 +1,150 @@
+.box {
+	width: 148px;
+	height: 148px;
+	background: #9D00FF;
+}
+
+
+/* Task 01 */
+
+.wide {
+	width: 1146px;
+	height: 295px;
+}
+
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.hover:hover { background: #FF00FF; }
+
+
+/* Task 02 & Task 03 */
+
+.gray-box {
+	box-sizing: border-box;
+	width: 950px;
+	height: 604px;
+	background: #E8E8E8;
+	border: 10px solid #D5D5D5;
+	margin: 40px auto 50px auto;
+	position: relative;
+}
+
+.absolute {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+
+/* Task 04 */
+
+.long { height: 2771px; }
+
+.fixed {
+	position: fixed;
+	right: 30px;
+	bottom: 30px;
+}
+
+
+/* Task 05 */
+
+.always-center {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.empty_space {
+	height: 3000px;
+}
+
+
+/* Task 06 */
+
+.border-box {
+	width: 558px;
+	height: 167px;
+	margin: 0px auto 0px auto;
+}
+
+.round-corners {
+	border-radius: 20px;
+	margin-top: 80px;
+}
+
+.wave-corners {
+	border-radius: 20px 160px;
+	margin-top: 140px;
+}
+
+.round {
+	border-radius: 220px;
+	margin-top: 146px;
+}
+
+.circle {
+	width: 167px;
+	margin-top: 172px;
+}
+
+.triangle {
+	width: 0;
+	height: 0;
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+	border-bottom: 170px solid #9D00FF;
+	margin-top: 162px;
+	margin-bottom: 95px;
+}
+
+
+/* Task 07 */
+
+.big-box {
+	width: 1146px;
+	height: 422px;
+	margin: 0px auto 49px auto;
+}
+
+.gradient {
+	background: linear-gradient(#A400FA, #FF00FF);
+	margin-top: 93.5px;
+}
+
+.shadow {
+	box-shadow: 0px 0px 36px #00000029;
+	margin-bottom: 93.5px;
+}
+
+
+/* Task 08 */
+
+.transparent-box {
+	width: 1207px;
+	height: 622px;
+	background: rgba(255, 255, 255, 0.8);
+}
+
+.backdrop {
+	background-image: url(../img/icon_check.svg);
+}
+
+.headline {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: Arial;
+	font-size: 96px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #3F3320;
+	white-space: nowrap;
+}

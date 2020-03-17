@@ -1,0 +1,51 @@
+* { appearance: none; -webkit-appearance: none; }
+*::-webkit-scrollbar { display: none; }
+	
+body {
+	margin: 0;
+	padding: 8px;
+}
+
+.projects {
+	margin: 15vh auto 0 auto;
+	width: fit-content;
+}
+
+.project {
+	display: inline-block;
+	position: relative;
+	height: 16rem;
+	width: 27rem;
+	margin: 0 6vw 6vh 6vw;
+	border-radius: 2rem;
+	overflow: hidden;
+	box-shadow: 0 0 0.75rem #00000014;
+}
+
+.project-teaser {
+	position: relative;
+	height: 16rem;
+	width: 27rem;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#minesweeper { background-image: url(../img/minesweeper.png); }
+#uebungsaufgaben { background-image: url(../img/uebungsaufgaben.png); }
+
+.reflection {
+	position: absolute;
+	top: -70px;
+	right: -96px;
+	transform: rotatez(38deg);
+	height: 12rem;
+	width: 21rem;
+	background-image: linear-gradient(0deg, #FFFFFFAA 0%, #FFFFFF66 100%);
+}
+
+.project:hover > .reflection {
+	top: -70px;
+	right: -96px;
+	height: 17rem;
+	width: 32rem;
+}

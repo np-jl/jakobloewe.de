@@ -1,0 +1,49 @@
+body {
+	padding-top: 40px;
+	padding-bottom: 124px;
+	font-family: Arial;
+	font-size: 15px;
+	line-height: 32px;
+}
+
+.box {
+	box-sizing: border-box;
+	width: 558px;
+	height: 438px;
+	padding: 50px;
+	margin-bottom: 30px;
+	background: #E8E8E8;
+	margin-left: auto;
+	margin-right: auto;
+	color: #606060;
+}
+
+.border {
+	padding: 40px;
+	border: 10px solid #D5D5D5;
+}
+
+.short { height: 248px; }
+
+.long { height: 821px; }
+
+.float {
+	height: 478px;
+	width: 1146px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.left {
+	float: left;
+	margin-right: 30px;
+}
+
+.right { float: right; }
+
+.thin { width: 264px; }
+
+.small {
+	width: 264px;
+	height: 204px;
+}

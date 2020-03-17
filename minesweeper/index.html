@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Minesweeper - JL</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body>
+		<header>
+			<div id="settings">
+				<div class="settings-modal">
+					<label for="fieldsize">Select field size</label>
+					<select id="fieldsize">
+						<option value="8">small (8x8)</option>
+						<option value="10" selected="selected">normal (10x10)</option>
+						<option value="12">medium (12x12)</option>
+						<option value="16">large (16x16)</option>
+					</select>
+					<label for="difficulty">Select difficulty</label>
+					<select id="difficulty">
+						<option value="0.2">easy (20%)</option>
+						<option value="0.3" selected="selected">normal (30%)</option>
+						<option value="0.4">hard (40%)</option>
+					</select>
+					<div class="settings-info">The changed settings will take effect after restart.</div>
+				</div>
+			</div>
+			<div class="headline">Minesweeper</div>
+			<div id="play" class="btn-play"></div>
+		</header>
+		<div id="bomb-number"></div>
+		<table id="minefield"></table>
+		<div id="win-modal" class="modal">
+			<div class="modal-body">
+				<h1>You won!</h1>
+				<div class="btn-play">Play again</div>
+			</div>
+		</div>
+		<div id="lose-modal" class="modal">
+			<div class="modal-body">
+				<h1>Defeat!</h1>
+				<div class="btn-play">Play again</div>
+			</div>
+		</div>
+		<script src="js/script.js"></script>
+	</body>
+</html>

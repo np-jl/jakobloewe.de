@@ -1,0 +1,308 @@
+/* start button */
+
+body {
+	font: bold 50px/58px "Roboto Condensed";
+	color: #FFFFFF;
+}
+
+.btn {
+	width: 291px;
+	padding: 19px;
+	margin: 0px auto 50px auto;
+	background: #FF9D93;
+	border-radius: 59px;
+	text-align: center;
+	text-transform: uppercase;
+	user-select: none;
+}
+
+.btn:hover {
+	cursor: pointer;
+}
+
+
+/* Night and day swith */
+
+.time {
+	width: 600px;
+	height: 38px;
+	margin: 0px auto 50px auto;
+	background: linear-gradient(90deg, rgb(0, 0, 140), rgb(255, 255, 140));
+	border-radius: 59px;
+}
+
+.time:hover {
+	cursor: pointer;
+}
+
+.night, .day {
+	display: inline-block;
+	width: 50%;
+	height: 38px;
+}
+
+
+/* animation layout */
+
+.city-container {
+	width: 1144px;
+	height: 499px;
+	margin: 170px auto 100px auto;
+	position: relative;
+}
+
+.sky-container {
+	bottom: 150px;
+	width: 1144px;
+	height: 499px;
+	position: absolute;
+	overflow: hidden;
+}
+
+.universe-container {
+	pointer-events: none;
+	width: 809px;
+	height: 809px;
+	top: 305px;
+	left: 168px;
+	position: absolute;
+}
+
+img { position: absolute; }
+
+.sun {
+	width: 85px;
+	height: 85px;
+	position: absolute;
+	border-radius: 48px;
+	z-index: 1;
+	background-color: rgb(255, 255, 155);
+	box-shadow: 0px 0px 65px rgb(255, 255, 155);
+}
+
+.moon {
+	bottom: 0;
+	right: 0;
+	width: 85px;
+	height: 85px;
+	position: absolute;
+	border-radius: 48px;
+	z-index: 1;
+	background-color: #FFFFFF;
+	box-shadow: 0px 0px 30px #FFFFFF;
+}
+
+.city { z-index: 10; }
+
+.big-cloud {
+	top: 80px;
+	left: 45px;
+	z-index: 8;
+}
+
+.cloud01 {
+	top: 65px;
+	left: 124px;
+	z-index: 5;
+}
+
+.cloud02 {
+	top: 70px;
+	left: 950px;
+	z-index: 10;
+}
+
+.small-cloud01 {
+	top: 70px;
+	left: 476px;
+	z-index: 8;
+}
+
+.small-cloud02 {
+	top: 31px;
+	left: 798px;
+	z-index: 5;
+}
+
+.tiny-cloud01 {
+	top: 13px;
+	left: 373px;
+	z-index: 5;
+}
+
+.tiny-cloud02 {
+	top: 5px;
+	left: 706px;
+	z-index: 5;
+}
+
+.house01 {
+	top: 255px;
+	left: 278px;
+	z-index: 30;
+}
+
+.house02 {
+	top: 246px;
+	left: 774px;
+	z-index: 30;
+}
+
+.tree01 {
+	top: 317px;
+	left: 357px;
+	z-index: 40;
+}
+
+.tree02 {
+	top: 317px;
+	left: 726px;
+	z-index: 40;
+}
+
+.trashcan {
+	top: 417px;
+	left: 828px;
+	z-index: 40;
+}
+
+.train {
+	top: 348px;
+	z-index: 20;
+}
+
+.airplane {
+	transform: rotate(-2deg);
+	z-index: 7;
+}
+
+.windmill01 {
+	top: 145px;
+	left: 118px;
+	transform-origin: 56px 55px;
+	z-index: 40;
+}
+
+.windmill02 {
+	top: 150px;
+	left: 939px;
+	transform-origin: 56px 55px;
+	z-index: 40;
+}
+
+.big-windmill01 {
+	top: 87px;
+	left: 249px;
+	transform-origin: 41px 68px;
+	z-index: 40;
+}
+
+.big-windmill02 {
+	top: 87px;
+	left: 844px;
+	transform-origin: 41px 68px;
+	z-index: 40;
+}
+
+.city-color {
+	pointer-events: none;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+	height: 100vh;
+	background: #000000;
+	z-index: 50;
+}
+
+.environment-color {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
+}
+
+
+/* animation */
+
+/* running */
+.animation .train { animation: train 6s infinite; }
+.animation .airplane { animation: airplane 12s linear infinite; }
+.animation .windmill01 { animation: windmill01 5s linear infinite; }
+.animation .windmill02 { animation: windmill02 5s linear infinite; }
+.animation .big-windmill01 { animation: windmill01 7s linear infinite; }
+.animation .big-windmill02 { animation: windmill02 7s linear infinite; }
+.animation .universe-container { animation: universe-rotation 180s linear infinite; }
+.animation .city-color { animation: foreground 180s linear infinite; }
+.animation .environment-color { animation: background 180s linear infinite; }
+
+/* paused */
+.animation.paused .train { animation-play-state: paused; }
+.animation.paused .airplane { animation-play-state: paused; }
+.animation.paused .windmill01 { animation-play-state: paused; }
+.animation.paused .windmill02 { animation-play-state: paused; }
+.animation.paused .big-windmill01 { animation-play-state: paused; }
+.animation.paused .big-windmill02 { animation-play-state: paused; }
+.animation.paused .universe-container { animation-play-state: paused; }
+.animation.paused .city-color { animation-play-state: paused; }
+.animation.paused .environment-color { animation-play-state: paused; }
+
+
+/* animation keyframes */
+
+@keyframes universe-rotation {
+	0% { transform: rotate(45deg); }
+	100% { transform: rotate(405deg); }
+}
+
+@keyframes foreground {
+	0% { opacity: 0%; }
+	25% { opacity: 0%; }
+	37% { opacity: 75%; }
+	50% { opacity: 70%; }
+	63% { opacity: 75%; }
+	75% { opacity: 0%; }
+	100% { opacity: 0%;}
+}
+
+@keyframes background {
+	33% { background-color: #FFFFFF; }
+	50% { background-color: #000000; }
+	66% { background-color: #FFFFFF; }
+}
+
+@keyframes train {
+	0% { left: 73px; }
+	50% { left: 650px; }
+	100% { left: 73px; }
+}
+
+@keyframes airplane {
+	0% { left: -97px;}
+	25% {
+		top: 235px;
+		left: -97px;
+		height: 24px;
+	}
+	50% { height: 16px; }
+	75% {
+		top: 215px;
+		left: 1241px;
+		height: 14px;
+	}
+	100% { left: 1241px; }
+}
+
+@keyframes windmill01 {
+	0% { transform: rotate(0deg); }
+	50% { transform: rotate(180deg); }
+	100% { transform: rotate(360deg); }
+}
+
+@keyframes windmill02 {
+	0% { transform: rotate(-0deg) scaleX(-1); }
+	50% { transform: rotate(-180deg) scaleX(-1); }
+	100% { transform: rotate(-360deg) scaleX(-1); }
+}

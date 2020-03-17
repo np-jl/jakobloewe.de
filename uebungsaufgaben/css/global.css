@@ -1,0 +1,113 @@
+.back {
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+}
+
+/* site element styling */
+.back, .overview .tab {
+	display: block;
+	padding: 10px;
+	background-color: rgba(88, 0, 136, 0.4);
+	border: 2px solid rgba(88, 0, 136, 0.25);
+	color: #FFFFFF;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 18px;
+	border-radius: 4px;
+	box-shadow: 0px 0px 4px #00000029;
+}
+
+.overview { font-family: Arial, Helvetica, sans-serif; }
+
+.overview .headline {
+	margin: 20px 0px 10px 0px;
+	color: #88888866;
+	text-shadow: 0px 0px 1px #88888844;
+	font-size: 26px;
+	text-align: center;
+}
+
+.overview .tabs {
+	margin: 0px auto;
+	width: fit-content;
+	padding: 0px;
+}
+
+.overview .tab { margin-right: 10px; }
+
+.overview li {
+	display: block;
+	list-style: none;
+	float: left;
+}
+
+
+/* dropdown */
+
+.overview nav li ul {
+	overflow-y: hidden;
+	max-height: 0px;
+	transition: 0.4s ease-in-out max-height;
+}
+
+.overview nav li:hover ul {
+	transition-delay: 0.4s;
+	max-height: 1000px;
+}
+
+.overview nav li li {
+	float: none;
+	margin-top: 8px;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+.overview nav li li:first-child { margin-top: 10px; }
+
+.overview nav li li:last-child { margin-bottom: 20px; }
+
+
+/* small navigation */
+.navigation {
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 10px;
+	background-color: #88888888;
+	color: #FFFFFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	line-height: 30px;
+}
+.navigation a {
+	text-decoration: none;
+	text-shadow: none;
+	font-weight: 500;
+	color: #FFFFFF;
+}
+.navigation .slice:hover {
+	cursor: pointer;
+}
+.navigation ul {
+	list-style: none;
+}
+.navigation ol {
+	margin-bottom: 20px;
+	list-style: none;
+}
+.navigation ol li {
+	counter-increment: list;
+}
+.navigation ol li a::after {
+	content: counter(list);
+	margin-left: 6px;
+}
+.navigation #menu {
+	height: 100vh;
+}
+.navigation #menu.hidden {
+	display: none;
+}
